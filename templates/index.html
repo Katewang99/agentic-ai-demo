@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>智能选校助手 - Agentic AI Demo</title>
+</head>
+<body>
+    <h2>🎓 中文智能选校助手</h2>
+    <form method="POST">
+        <label>GPA：</label><input name="gpa"><br>
+        <label>托福：</label><input name="toefl"><br>
+        <label>SAT：</label><input name="sat"><br>
+        <label>意向专业：</label><input name="major"><br>
+        <label>实习经历：</label><input name="intern"><br>
+        <label>其他补充信息：</label><textarea name="extra"></textarea><br>
+        <button type="submit">提交</button>
+    </form>
+
+    <br>
+    <h3>📌 示例体验（无需填写）：</h3>
+    <form method="POST">
+        <input type="hidden" name="gpa" value="3.9">
+        <input type="hidden" name="toefl" value="100">
+        <input type="hidden" name="sat" value="1300">
+        <input type="hidden" name="major" value="数据科学">
+        <input type="hidden" name="intern" value="两段数据分析实习">
+        <input type="hidden" name="extra" value="国际生，目标美国TOP50大学">
+        <button type="submit">📍 试试看示例</button>
+    </form>
+
+    {% if result %}
+        <h3>🤖 AI 生成推荐：</h3>
+        <pre>{{ result }}</pre>
+    {% endif %}
+
+    <br><br>
+    <h4>📱 添加微信了解更多留学服务</h4>
+    <p>微信号：OfferDeerEdu</p>
+</body>
+</html>
