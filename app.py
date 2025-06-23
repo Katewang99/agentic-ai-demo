@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 # Gemini API key
 genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
-
 model = genai.GenerativeModel("gemini-2.0-flash")
 
 @app.route("/", methods=["GET", "POST"])
@@ -35,9 +34,8 @@ SAT：{sat}
 
         response = model.generate_content(prompt)
         result = response.text
-        
-    return render_template("index.html", result=result)  
 
+    return render_template("index.html", result=result)  
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
