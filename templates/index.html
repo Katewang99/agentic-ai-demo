@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>中文智能选校助手</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 40px; }
-        h1 { color: #333; }
-        label { display: block; margin-top: 10px; }
-        input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
-        button { margin-top: 15px; padding: 10px 20px; background: #3f51b5; color: white; border: none; cursor: pointer; }
-        button:hover { background: #303f9f; }
-        .result { margin-top: 30px; white-space: pre-wrap; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
-    </style>
+  <title>智能选校助手</title>
 </head>
 <body>
-    <h1>🎓 中文智能选校助手</h1>
-    <form method="post">
-        <label>GPA: <input name="gpa" required></label>
-        <label>托福: <input name="toefl" required></label>
-        <label>SAT: <input name="sat" required></label>
-        <label>意向专业: <input name="major" required></label>
-        <label>实习经历: <input name="intern" required></label>
-        <label>其他补充信息: <textarea name="extra" rows="4"></textarea></label>
-        <button type="submit">提交</button>
-    </form>
-    {% if result %}
-    <div class="result">
-        <h2>✨ AI 生成推荐：</h2>
-        {{ result }}
-    </div>
-    {% endif %}
+  <h2>留学背景信息收集表</h2>
+  <form method="post">
+    <p>学习风格: <input name="learning_style"></p>
+    <p>开放性 (1~3): <input name="openness" type="number"></p>
+    <p>责任感 (1~3): <input name="responsibility" type="number"></p>
+    <p>抗压程度 (1~3): <input name="stress" type="number"></p>
+    <p>文化适配: <input name="culture_fit"></p>
+    <p>动机驱动: <input name="motivation"></p>
+    <p>社交风格: <input name="social"></p>
+
+    <p>GPA: <input name="gpa"></p>
+    <p>课程体系: <input name="system"></p>
+    <p>托福: <input name="toefl"></p>
+    <p>SAT: <input name="sat"></p>
+
+    <p>经历描述: <input name="experience"></p>
+    <p>意向国家: <input name="country"></p>
+    <p>预算: <input name="budget"></p>
+    <p>学位类型: <input name="degree"></p>
+    <p>学校类型: <input name="school_type"></p>
+
+    <p>工作国家: <input name="career_country"></p>
+    <p>入学时间: <input name="start_date"></p>
+    <p>职业方向: <input name="career_direction"></p>
+
+    <button type="submit">生成选校建议</button>
+  </form>
 </body>
 </html>
